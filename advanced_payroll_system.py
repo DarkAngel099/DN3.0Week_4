@@ -1,4 +1,4 @@
-# advanced_payroll_system.py
+
 
 class Employee:
     def __init__(self, name, hours_worked, hourly_rate):
