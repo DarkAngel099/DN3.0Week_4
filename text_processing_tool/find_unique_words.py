@@ -1,4 +1,4 @@
-# text_processing_tool/find_unique_words.py
+
 
 def find_unique_words(text):
     """Returns a set of unique words in the text."""
