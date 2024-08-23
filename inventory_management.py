@@ -1,6 +1,4 @@
-# inventory_management.py
 
-# --- List to store product names ---
 product_names = []
 
 def add_product(product_name):
@@ -25,7 +23,6 @@ def update_product(old_name, new_name):
     else:
         print(f"Product '{old_name}' not found.")
 
-# --- Dictionary to store product details (name, quantity, price) ---
 product_details = {}
 
 def add_product_details(name, quantity, price):
@@ -52,7 +49,7 @@ def delete_product_details(name):
     else:
         print(f"Product '{name}' not found.")
 
-# --- Tuples to represent immutable product data ---
+
 def create_product_catalog():
     """Create a catalog of products using tuples."""
     product_catalog = [
@@ -68,7 +65,7 @@ def display_catalog(product_catalog):
     for product in product_catalog:
         print(f"Name: {product[0]}, Quantity: {product[1]}, Price: ${product[2]:.2f}")
 
-# --- Set to track unique product categories ---
+
 product_categories = set()
 
 def add_category(category):
@@ -84,7 +81,7 @@ def remove_category(category):
     else:
         print(f"Category '{category}' not found.")
 
-# --- Functions combining collections ---
+
 def generate_price_report():
     """Generate a report of products sorted by price."""
     sorted_products = sorted(product_details.items(), key=lambda item: item[1]['price'])
@@ -97,35 +94,34 @@ def find_products_in_price_range(min_price, max_price):
     products_in_range = {name for name, details in product_details.items() if min_price <= details['price'] <= max_price}
     print(f"\nProducts in price range ${min_price:.2f} - ${max_price:.2f}: {products_in_range}")
 
-# --- Main program execution ---
+
 if __name__ == "__main__":
-    # Add products to the list
     add_product("Widget")
     add_product("Gadget")
     add_product("Doodad")
 
-    # Update a product name
+    
     update_product("Widget", "Super Widget")
 
-    # Add product details
+    
     add_product_details("Super Widget", 50, 19.99)
     add_product_details("Gadget", 100, 29.99)
     add_product_details("Doodad", 75, 14.99)
 
-    # Update product details
+    
     update_product_details("Gadget", price=24.99)
 
-    # Generate a price report
+    
     generate_price_report()
 
-    # Find products in a specific price range
+    
     find_products_in_price_range(15, 25)
 
-    # Add and remove categories
+    
     add_category("Electronics")
     add_category("Household")
     remove_category("Household")
 
-    # Create and display a product catalog
+    
     catalog = create_product_catalog()
     display_catalog(catalog)
