@@ -1,4 +1,4 @@
-# enhanced_inventory_management.py
+
 
 import json
 import threading
@@ -53,25 +53,25 @@ class Inventory:
                     print(f"Restock Alert: {item_name} is low in stock ({quantity} left).")
             time.sleep(5)  # Check every 5 seconds
 
-# Create an inventory instance
+
 inventory = Inventory()
 
-# Perform some operations
+
 inventory.add_item("Widget", 20)
 inventory.add_item("Gadget", 5)
 inventory.remove_item("Widget", 5)
 
-# Save the inventory state to a file
+
 inventory.save_to_file("inventory.json")
 
-# Load the inventory state from the file and print it
+
 inventory.load_from_file("inventory.json")
 print("Current Inventory:", inventory.items)
 
-# Start a thread to check for restocking alerts
+
 alert_thread = threading.Thread(target=inventory.restock_alerts)
 alert_thread.daemon = True  # Daemon thread will close when the main program exits
 alert_thread.start()
 
-# Run the program for some time to see restock alerts
+
 time.sleep(20)
