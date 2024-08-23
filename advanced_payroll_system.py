@@ -26,15 +26,15 @@ class Manager(Employee):
         total_pay = base_pay + self.bonus
         return total_pay
 
-# Input from user for Employee
+
 employee_name = input("Enter employee's name: ")
 employee_hours_worked = float(input("Enter hours worked: "))
 employee_hourly_rate = float(input("Enter hourly rate: "))
 
-# Create Employee object
+
 employee = Employee(employee_name, employee_hours_worked, employee_hourly_rate)
 
-# Input from user for Manager
+
 manager_name = input("Enter manager's name: ")
 manager_hours_worked = float(input("Enter hours worked: "))
 manager_hourly_rate = float(input("Enter hourly rate: "))
